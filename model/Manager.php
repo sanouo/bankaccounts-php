@@ -18,4 +18,26 @@ class Manager{
         $q->bindValue(':cash', $bank->getCash());
         $q->execute();
       }
+
+
+      public function getAccounts()
+      {
+        $req = $this->bdd->prepare('SELECT * FROM account');
+        $req->execute();
+        $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($donnees as $key => $value) {
+        $donnees[$key] = new Account($value);
+       }
+        return $donnees;
+      }
+
+
+      // // Execute a DELETE request
+      public function delete($supprim)
+      {
+        $req = $this->bdd->exec('DELETE FROM account WHERE id = '.$supprim);
+        header("Location: index.php");
+      }
+
 }
