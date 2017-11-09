@@ -25,5 +25,10 @@ if (isset($_POST['name']) && isset($_POST['cash'])) {
       header("Location: index.php");
 }
 
+$donnees= $manager->getAccounts();
+
+if(isset($_GET['supprim'])){
+  $donnees= $manager->delete($_GET['supprim']);
+}
 
 require ('views/indexVue.php');
