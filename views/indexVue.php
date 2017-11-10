@@ -2,8 +2,8 @@
   include("template/header.php");
  ?>
 
+<!-- start of the div class formu -->
 <div class="formu col-12 col-md-8 col-lg-6">
-
  <form action="index.php" method="post">
     <div class="form-group">
       <input type="text" class="form-control" id="formGroupExampleInput" name="name"  placeholder="name">
@@ -14,9 +14,10 @@
     <button type="submit" value="Submit" class="btn btn-primary submi">Submit</button>
   </form>
 </div>
+<!-- end of the div class formu -->
 
 
-   <!-- start of the div class container -->
+ <!-- start of the div class block -->
 <div class="block">
 
   <?php foreach ($donnees as $key => $value){
@@ -24,7 +25,6 @@
 
     <div class="container accounts col-12 col-md-6 col-lg-4">
       <div class="row">
-
                <div class="card col-12 col-md-12 col-lg-12">
                  <div class="card-block col-12 col-md-12 col-lg-12">
                  <h3 class="card-title"><?php echo $value->getName(); ?></h3>
@@ -32,17 +32,15 @@
                  <a href="index.php?supprim=<?php echo $value->getId();?>"><i class="material-icons">delete</i></a>
                  </div>
                </div>
+       </div>
+   </div>
 
-
-
-             </div>
-           </div>
            <?php
              }
            ?>
 
-         </div>
-   <!-- end of the div class container -->
+ </div>
+   <!-- end of the div class block -->
 
 
  <?php

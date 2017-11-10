@@ -1,14 +1,17 @@
 <?php
-// class abstract Account
+// class Account
 class Account {
   protected $id;
   protected $name;
   protected $cash;
 
 
+// function construct
   public function __construct(array $data){
     $this->hydrate($data);
   }
+
+  // function hydrate
   public function hydrate(array $data)
   {
     foreach ($data as $key => $value) {
