@@ -1,16 +1,20 @@
 <?php
 class Manager{
       protected $bdd;
+
+  // function construct
       public function __construct($bdd)
       {
         $this->setBdd($bdd);
       }
-// setters for bdd
+
+ // setters for bdd
        public function setBdd(PDO $bdd)
        {
           $this->bdd = $bdd;
        }
-// Execute a INSERT request in database
+
+ // Execute a INSERT request in database
       public function add($bank)
       {
         $q = $this->bdd->prepare('INSERT INTO account(name, cash) VALUES(:name, :cash)');
@@ -19,7 +23,7 @@ class Manager{
         $q->execute();
       }
 
-
+  // Execute a SELECT request database
       public function getAccounts()
       {
         $req = $this->bdd->prepare('SELECT * FROM account');
@@ -33,7 +37,7 @@ class Manager{
       }
 
 
-      // // Execute a DELETE request
+   //  Execute a DELETE request
       public function delete($supprim)
       {
         $req = $this->bdd->exec('DELETE FROM account WHERE id = '.$supprim);

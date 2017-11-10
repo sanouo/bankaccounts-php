@@ -20,13 +20,13 @@
 
     <body>
 
+<!-- start of the header -->
     <header>
-
       <div class="jumbotron">
         <h1 class="display-3">Bank</h1>
         <p class="lead">Banking transaction in all simplicity</p>
         <hr class="my-4">
         <p>Make payments on the accounts, Make withdrawals, Make transfers from one account to another</p>
       </div>
-      
    </header>
+ <!-- end of the header -->
