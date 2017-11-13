@@ -23,6 +23,14 @@ class Manager{
         $q->execute();
       }
 
+      public function get($id)
+          {
+            $id = (int) $id;
+            $q = $this->bdd->query('SELECT * FROM account WHERE id = '.$id);
+            $donnees = $q->fetch(PDO::FETCH_ASSOC);
+            return new Account($donnees);
+          }
+
   // Execute a SELECT request database
       public function getAccounts()
       {
@@ -36,6 +44,17 @@ class Manager{
         return $donnees;
       }
 
+
+      public function getUpdate($bank)
+      {
+        $q = $this->bdd->prepare ('UPDATE account SET name = :name, cash= :cash WHERE id = :id');
+
+        $q->bindValue(':id', $bank->getId());
+        $q->bindValue(':name', $bank->getName());
+        $q->bindValue(':cash', $bank->getCash());
+        $q->execute();
+
+      }
 
    //  Execute a DELETE request
       public function delete($supprim)

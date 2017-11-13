@@ -16,12 +16,47 @@ $manager = new Manager($bdd);
 
 
 // call function add
-if (isset($_POST['name']) && isset($_POST['cash']))
+
+// if (isset($_POST['submitUpdate'])) {
+//   $account = $manager->get($_POST['id']);
+//
+//   $donnees = new Account($_POST);
+//   $manager->getUpdate($donnees);
+// }
+
+if (isset($_POST['submitUpdate']) && isset($_POST['addMoney'])){
+    // recuperrer objet par rapport a lid
+      $update = $manager->get($_POST['id']);
+    // appeller methode addCash
+        // passer argument $_post addMoney
+    $update->addCash($_POST['addMoney']);
+
+    // update l objet
+    $manager->getUpdate($update);
+}
+
+if (isset($_POST['submitUpdate']) && isset($_POST['takeMoney'])){
+    // recuperrer objet par rapport a lid
+      $update = $manager->get($_POST['id']);
+    // appeller methode addCash
+        // passer argument $_post addMoney
+    $update->takeCash($_POST['takeMoney']);
+
+    // update l objet
+    $manager->getUpdate($update);
+}
+
+
+if (isset($_POST['addAccount']))
+// && isset($_POST['name']) && isset($_POST['cash'])
 {
   $donnees = new Account($_POST);
   $manager->add($donnees);
   header("Location: index.php");
 }
+
+
+
 
 
 // call function getAccounts
