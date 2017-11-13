@@ -10,6 +10,9 @@
     <input type="hidden" class="form-control" id="formGroupExampleInput" name="id"  value= '<?php echo $update->getId()?>' placeholder="cash">
 
     <input type="text" class="form-control" id="formGroupExampleInput" name="addMoney" placeholder="addMoney">
+    <input type="text" class="form-control" id="formGroupExampleInput" name="takeMoney" placeholder="takeMoney">
+
+
 
     <button type="submit" value="Submit" name="submitUpdate" class="btn btn-primary submi">Submit</button>
   </form>

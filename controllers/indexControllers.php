@@ -35,6 +35,18 @@ if (isset($_POST['submitUpdate']) && isset($_POST['addMoney'])){
     $manager->getUpdate($update);
 }
 
+if (isset($_POST['submitUpdate']) && isset($_POST['takeMoney'])){
+    // recuperrer objet par rapport a lid
+      $update = $manager->get($_POST['id']);
+    // appeller methode addCash
+        // passer argument $_post addMoney
+    $update->takeCash($_POST['takeMoney']);
+
+    // update l objet
+    $manager->getUpdate($update);
+}
+
+
 if (isset($_POST['addAccount']))
 // && isset($_POST['name']) && isset($_POST['cash'])
 {
