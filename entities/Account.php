@@ -22,6 +22,10 @@ class Account {
     }
   }
 
+  public function addCash($money)
+{
+  $this->cash += $money;
+}
   // getters
     public function getId()
     {
