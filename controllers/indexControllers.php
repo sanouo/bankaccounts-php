@@ -11,52 +11,37 @@ function loadClass($class)
 spl_autoload_register("loadClass");
 
 
-// create object $manager type ClientManager
+// create object $manager
 $manager = new Manager($bdd);
 
 
-// call function add
-
-// if (isset($_POST['submitUpdate'])) {
-//   $account = $manager->get($_POST['id']);
-//
-//   $donnees = new Account($_POST);
-//   $manager->getUpdate($donnees);
-// }
-
 if (isset($_POST['submitUpdate']) && isset($_POST['addMoney'])){
-    // recuperrer objet par rapport a lid
+    // retrieve the object from the ID
       $update = $manager->get($_POST['id']);
-    // appeller methode addCash
-        // passer argument $_post addMoney
+    // call function addCash
     $update->addCash($_POST['addMoney']);
-
-    // update l objet
+    // update object
     $manager->getUpdate($update);
 }
 
-if (isset($_POST['submitUpdate']) && isset($_POST['takeMoney'])){
-    // recuperrer objet par rapport a lid
-      $update = $manager->get($_POST['id']);
-    // appeller methode addCash
-        // passer argument $_post addMoney
-    $update->takeCash($_POST['takeMoney']);
 
-    // update l objet
+if (isset($_POST['submitUpdate']) && isset($_POST['takeMoney'])){
+    // retrieve the object from the ID
+    $update = $manager->get($_POST['id']);
+    // call function takeCash
+    $update->takeCash($_POST['takeMoney']);
+    // update object
     $manager->getUpdate($update);
 }
 
 
 if (isset($_POST['addAccount']))
-// && isset($_POST['name']) && isset($_POST['cash'])
 {
   $donnees = new Account($_POST);
+  // call function add (for insert in the database)
   $manager->add($donnees);
   header("Location: index.php");
 }
-
-
-
 
 
 // call function getAccounts
