@@ -22,15 +22,17 @@ class Account {
     }
   }
 
+  // create function addCash
   public function addCash($money)
-{
-  $this->cash += $money;
-}
+  {
+    $this->cash += $money;
+  }
 
-public function takeCash($money)
-{
-$this->cash -= $money;
-}
+  // create function takeCash
+  public function takeCash($money)
+  {
+    $this->cash -= $money;
+  }
 
   // getters
     public function getId()

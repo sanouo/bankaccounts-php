@@ -2,7 +2,7 @@
   include("template/header.php");
  ?>
 
-<!-- start of the div class formu -->
+<!-- start of the div class formu for add account-->
 <div class="formu col-12 col-md-8 col-lg-6">
  <form action="index.php" method="post">
     <div class="form-group">
@@ -14,7 +14,7 @@
     <button type="submit" value="Submit" name="addAccount" class="btn btn-primary submi">Submit</button>
   </form>
 </div>
-<!-- end of the div class formu -->
+<!-- end of the div class formu for add account-->
 
 
  <!-- start of the div class block -->

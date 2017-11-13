@@ -23,6 +23,7 @@ class Manager{
         $q->execute();
       }
 
+  // Execute a SELECT request in database where id
       public function get($id)
           {
             $id = (int) $id;
@@ -44,7 +45,7 @@ class Manager{
         return $donnees;
       }
 
-
+      // Execute a UPDATE request database
       public function getUpdate($bank)
       {
         $q = $this->bdd->prepare ('UPDATE account SET name = :name, cash= :cash WHERE id = :id');
@@ -53,7 +54,6 @@ class Manager{
         $q->bindValue(':name', $bank->getName());
         $q->bindValue(':cash', $bank->getCash());
         $q->execute();
-
       }
 
    //  Execute a DELETE request
