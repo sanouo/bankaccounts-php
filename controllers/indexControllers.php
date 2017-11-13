@@ -16,12 +16,25 @@ $manager = new Manager($bdd);
 
 
 // call function add
-if (isset($_POST['name']) && isset($_POST['cash']))
+
+if (isset($_POST['submitUpdate'])) {
+  $account = $manager->get($_POST['id']);
+
+  var_dump($account);
+  $donnees = new Account($_POST);
+  $manager->getUpdate($donnees);
+}
+
+if (isset($_POST['addAccount']))
+// && isset($_POST['name']) && isset($_POST['cash'])
 {
   $donnees = new Account($_POST);
   $manager->add($donnees);
   header("Location: index.php");
 }
+
+
+
 
 
 // call function getAccounts

@@ -11,7 +11,7 @@
     <div class="form-group">
       <input type="text" class="form-control" id="formGroupExampleInput1" name="cash" placeholder="cash">
     </div>
-    <button type="submit" value="Submit" class="btn btn-primary submi">Submit</button>
+    <button type="submit" value="Submit" name="addAccount" class="btn btn-primary submi">Submit</button>
   </form>
 </div>
 <!-- end of the div class formu -->
@@ -30,6 +30,10 @@
                  <h3 class="card-title"><?php echo $value->getName(); ?></h3>
                  <p class="card-text"><?php echo $value->getCash(); ?>$</p>
                  <a href="index.php?supprim=<?php echo $value->getId();?>"><i class="material-icons">delete</i></a>
+
+              <a href="update.php?id=<?php echo $value->getId();?>">update</a>
+
+
                  </div>
                </div>
        </div>
