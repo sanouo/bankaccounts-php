@@ -116,7 +116,12 @@ textarea {
 }
 /*end rules css for the page indexVue*/
 
-
+/* start rules for the footer*/
+footer
+{
+  margin-top: 2em;
+}
+/*end rules for the footer*/
 
 
 

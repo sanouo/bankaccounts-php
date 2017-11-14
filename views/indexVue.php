@@ -30,10 +30,7 @@
                  <h3 class="card-title"><?php echo $value->getName(); ?></h3>
                  <p class="card-text"><?php echo $value->getCash(); ?>$</p>
                  <a href="index.php?supprim=<?php echo $value->getId();?>"><i class="material-icons">delete</i></a>
-
-              <a href="update.php?id=<?php echo $value->getId();?>">update</a>
-
-
+                 <a href="update.php?id=<?php echo $value->getId();?>">banking operation</a>
                  </div>
                </div>
        </div>
